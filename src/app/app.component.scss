@@ -9,11 +9,11 @@
 }
 
 .hero-container{
-    background: linear-gradient(to top, #808080, #ffffff );
+    background: linear-gradient(to bottom,  #ffffff, rgb(109, 124, 175),);
 }
 
 .contact-form-container{
-    background: linear-gradient(to bottom, #808080, #ffffff);
+    background: linear-gradient(to bottom, rgb(109, 124, 175), rgb(50, 57, 81));
 }
 
 .contact-form{
@@ -33,5 +33,11 @@
 .work-button{
     margin-left: auto;
     margin-right: 5%;
+    background-color: rgb(110, 126, 179);
+    color: white;
+}
+
+.submit-button{
+    background-color: rgb(110, 126, 179);
 }
 

@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg rounded" aria-label="Thirteenth navbar example">
+<!-- <nav class="navbar navbar-expand-lg rounded" aria-label="Thirteenth navbar example">
   <a class="name navbar-brand" href="#">Jared Finn</a>
   <button class="work-button btn btn-primary">Lets Work</button>
-</nav>
+</nav> -->
 
 
 
@@ -11,13 +11,14 @@
   </div>
   <div class="col-md-8 container-fluid py-5">
     <h1>Hi I'm Jared Finn</h1>
-    <p>Helping my friends, peers and communities around me create and innovate to make all of our lives less stressful and more enjoyable is a dream of mine. From simple day projects to year long endeavors, I am fully prepared to take on anything and provide professional quality at a reasonable price.</p>
+    <p>Helping my friends, peers and communities around me create and innovate to make all of our lives less stressful and more enjoyable is a dream of mine. From simple day projects to year long endeavors, I am fully prepared to take on anything and provide professional quality at a low price.</p>
+    <button class="work-button btn">Lets Work Together!</button>
   </div>
 </div>
 
 
 
-<div class="hero-container row">
+<div class="hero-container row me-0">
   
   <div id="myCarousel" class="carousel slide " data-bs-ride="carousel">
     <!-- <div class="carousel-indicators">
@@ -64,7 +65,7 @@
       <div class="col-md-8">
         <div class="jumbotron">
           <!-- <h1 class="display-4">Contact Us</h1> -->
-          <form action="#" method="post">
+          <form (submit)="onSubmit()" method="post">
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" class="form-control" id="name" name="name" required>
@@ -79,10 +80,10 @@
               <input type="tel" class="form-control" id="phone" name="phone" required>
             </div>
             <div class="form-group">
-              <label for="proposal">Proposal for hire</label>
+              <label for="proposal">Proposal</label>
               <textarea class="form-control" id="proposal" name="proposal" rows="5" required></textarea>
             </div>
-            <button type="submit" class="mt-3 btn btn-primary">Submit</button>
+            <button type="submit" class="submit-button mt-3 btn btn-primary">Submit</button>
           </form>
         </div>
       </div>
@@ -139,7 +140,10 @@
       <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
         <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
       </a>
-      <span class="mb-3 mb-md-0 text-muted">&copy; 2022 Company, Inc</span>
+    </div>
+
+    <div>
+      <h6>jaredhfinn@gmail.com</h6>
     </div>
 
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
