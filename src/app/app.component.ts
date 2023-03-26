@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { EmailService } from './services/email.service';
 
 @Component({
   selector: 'app-root',
@@ -8,27 +9,28 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
 
-  name!: string;
-  email!: string;
-  phone!: string;
-  proposal!: string;
+  name: string = '';
+  email: string = '';
+  phone: string = '';
+  proposal: string = '';
 
-  constructor(private http: HttpClient) { }
+  submitted: boolean = false;
 
-  onSubmit() {
-    console.log("Sending Email...")
-    // const formData = {
-    //   name: this.name,
-    //   email: this.email,
-    //   phone: this.phone,
-    //   proposal: this.proposal
-    // };
+  constructor(private emailService: EmailService) {}
 
-    // this.http.post('http://localhost:3000/send-email', formData)
-    //   .subscribe(() => {
-    //     console.log('Email sent successfully');
-    //   }, error => {
-    //     console.log('Error sending email:', error);
-    //   });
+  sendEmail() {
+    const subject = 'Inquiry';
+    const message = {
+      name: this.name,
+      email: this.email,
+      phone: this.phone,
+      proposal: this.proposal
+    };
+    this.submitted = true;
+    console.log(message)
+    this.emailService.sendEmail(subject, message).subscribe(response => {
+
+      console.log(response);
+    });
   }
 }
