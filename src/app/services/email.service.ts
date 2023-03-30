@@ -8,15 +8,15 @@ export class EmailService {
   constructor(private http: HttpClient) {}
 
   sendEmail(subject: string, message: any) {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Access-Control-Allow-Origin': 'http://ec2-3-216-125-179.compute-1.amazonaws.com',
-        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
-      })
-    };
+    // const httpOptions = {
+    //   headers: new HttpHeaders({
+    //     'Access-Control-Allow-Origin': 'http://localhost:3000',
+    //     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    //     'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+    //   })
+    // };
     const payload = { subject: subject, message: message };
     console.log(payload)
-    return this.http.post('http://3.216.125.179:3000/send-email', payload, httpOptions);
+    return this.http.post('http://3.216.125.179:443/send-email', payload);
   }
 }
