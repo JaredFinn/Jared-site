@@ -11,8 +11,8 @@
   </div>
   <div class="col-md-8 container-fluid py-5">
     <h1>Hi I'm Jared Finn</h1>
-    <p>Helping my friends, peers and communities around me create and innovate to make all of our lives less stressful and more enjoyable is a dream of mine. From simple day projects to year long endeavors, I am fully prepared to take on anything and provide professional quality at a low price.</p>
-    <button class="work-button btn">Lets Work Together!</button>
+    <p>Helping my friends, peers and communities around me create and innovate to make all of our lives less stressful and more enjoyable is a dream of mine. From simple day projects to year long endeavors, I am fully prepared to take on anything and provide 1 on 1 service.</p>
+    <button class="work-button btn" (click)="scroll(contact)">Lets Work Together!</button>
   </div>
 </div>
 
@@ -20,6 +20,7 @@
 
 <div class="hero-container row me-0">
   
+  <h1 class="text-center display-4 text-center mt-5">Get to know my skills.</h1>
   <div id="myCarousel" class="carousel slide " data-bs-ride="carousel">
     <!-- <div class="carousel-indicators">
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -79,13 +80,14 @@
                             <div class="text w-75 m-auto">Create and design layout and visual looks of websites/apps/systems to make a pleasing UI for the user. </div>
                         </div>
                     </div>
+                    
                     <div class="service-block w-50" style="visibility: visible;">
                       <div class="w-100 text-center">
-                        <div class="ico fa fa-umbrella highlight text-black"></div>
+                        <div class="ico fa fa-code highlight text-black"></div>
                       </div>
                       <div class="text-block text-center">
-                          <div class="name mb-2">Scripting & Automation</div>
-                          <div class="text w-75 m-auto">Taking everyday, menial tasks and simplifying the process and automating as much of the process as possible limiting human involvement. </div>
+                          <div class="name mb-2">Full-Stack Development</div>
+                          <div class="text w-75 m-auto">Able to design and devlop full stack systems/applications to accomodate your needs and wants. Design and feel, stored data in a database, and so much more.</div>
                       </div>
                     </div>
               </div>
@@ -101,11 +103,11 @@
                       </div>
                       <div class="service-block w-50" style="visibility: visible;">
                         <div class="w-100 text-center">
-                          <div class="ico fa fa-code highlight text-black"></div>
+                          <div class="ico fa fa-umbrella highlight text-black"></div>
                         </div>
                         <div class="text-block text-center">
-                            <div class="name mb-2">Full-Stack Development</div>
-                            <div class="text w-75 m-auto">Able to design and devlop full stack systems/applications to accomodate your needs and wants. Design and feel, stored data in a database, and so much more.</div>
+                            <div class="name mb-2">Scripting & Automation</div>
+                            <div class="text w-75 m-auto">Taking everyday, menial tasks and simplifying the process and automating as much of the process as possible limiting human involvement. </div>
                         </div>
                       </div>
               </div>
@@ -115,7 +117,7 @@
     </div>
 </section>
 
-<div class="contact-form-container p-5 text-white">
+<div class="contact-form-container p-5 text-white" #contact>
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="jumbotron">
@@ -135,7 +137,7 @@
               <input [(ngModel)]="phone" type="tel" class="form-control" id="phone" name="phone" required>
             </div>
             <div class="form-group mt-3">
-              <label for="proposal">Proposal</label>
+              <label for="proposal">Proposal <small >(Please provide your preffered contact method)</small></label>
               <textarea [(ngModel)]="proposal" class="form-control" id="proposal" name="proposal" rows="5" required></textarea>
             </div>
             <button *ngIf="!submitted" type="submit" class="submit-button mt-3 btn text-white" (click)="sendEmail()">Submit</button>
@@ -196,9 +198,9 @@
     </div>
 
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="32" height="32"><use xlink:href="#twitter"/></svg></a></li>
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="32" height="32"><use xlink:href="#instagram"/></svg></a></li>
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="32" height="32"><use xlink:href="#facebook"/></svg></a></li>
+      <li class="ms-3"><a class="text-muted"><svg class="bi" width="32" height="32"><use xlink:href="#twitter"/></svg></a></li>
+      <li class="ms-3"><a class="text-muted"><svg class="bi" width="32" height="32"><use xlink:href="#instagram"/></svg></a></li>
+      <li class="ms-3"><a class="text-muted"><svg class="bi" width="32" height="32"><use xlink:href="#facebook"/></svg></a></li>
     </ul>
   </footer>
 </div>

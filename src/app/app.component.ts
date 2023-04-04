@@ -33,4 +33,8 @@ export class AppComponent {
       console.log(response);
     });
   }
+
+  scroll(el: HTMLElement) {
+    el.scrollIntoView();
+}
 }
