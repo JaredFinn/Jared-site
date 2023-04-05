@@ -17,6 +17,6 @@ export class EmailService {
     // };
     const payload = { subject: subject, message: message };
     console.log(payload)
-    return this.http.post('https://3.216.125.179:443/send-email', payload);
+    return this.http.post('http://3.216.125.179:443/send-email', payload);
   }
 }
