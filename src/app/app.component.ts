@@ -19,19 +19,19 @@ export class AppComponent {
   constructor(private emailService: EmailService) {}
 
   sendEmail() {
-    const subject = 'Inquiry';
-    const message = {
-      name: this.name,
-      email: this.email,
-      phone: this.phone,
-      proposal: this.proposal
-    };
-    this.submitted = true;
-    console.log(message)
-    this.emailService.sendEmail(subject, message).subscribe(response => {
+    // const subject = 'Inquiry';
+    // const message = {
+    //   name: this.name,
+    //   email: this.email,
+    //   phone: this.phone,
+    //   proposal: this.proposal
+    // };
+    // this.submitted = true;
+    // console.log(message)
+    // this.emailService.sendEmail(subject, message).subscribe(response => {
 
-      console.log(response);
-    });
+    //   console.log(response);
+    // });
   }
 
   scroll(el: HTMLElement) {
