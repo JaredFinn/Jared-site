@@ -26,7 +26,7 @@ export class AppComponent {
     //   phone: this.phone,
     //   proposal: this.proposal
     // };
-    // this.submitted = true;
+    this.submitted = true;
     // console.log(message)
     // this.emailService.sendEmail(subject, message).subscribe(response => {
 
