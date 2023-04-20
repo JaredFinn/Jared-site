@@ -12,7 +12,7 @@
   <script src="https://kit.fontawesome.com/efe44b00f6.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <form name="contact" netlify netlify-honeypot="bot-field" hidden [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden [formGroup]="contactForm" (ngSubmit)="onSubmit()" method="POST">
     <div class="form-group">
       <label for="name">Name</label>
       <input formControlName="name" type="text" class="form-control" id="name" name="name" required>

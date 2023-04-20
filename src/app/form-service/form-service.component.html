@@ -1,4 +1,4 @@
-<form name="contact" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+<form name="contact" [formGroup]="contactForm" (ngSubmit)="onSubmit()" method="POST" data-netlify="true">
     <div class="form-group">
       <label for="name">Name</label>
       <input formControlName="name" type="text" class="form-control" id="name" name="name" required>
