@@ -15,5 +15,6 @@
       <label for="proposal">Proposal <small class="instruction">(Please provide your preferred contact method)</small></label>
       <textarea formControlName="proposal" class="form-control" id="proposal" name="proposal" rows="5" required></textarea>
     </div>
-    <button type="submit" class="submit-button mt-3 btn text-white">Submit</button>
+    <button type="submit" class="submit-button mt-3 btn text-white" (click)="onSubmit()">Submit</button>
+
 </form>
