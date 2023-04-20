@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { EmailService } from './services/email.service';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +15,7 @@ export class AppComponent {
 
   submitted: boolean = false;
 
-  constructor(private emailService: EmailService) {}
+  constructor() {}
 
   sendEmail() {
     // const subject = 'Inquiry';

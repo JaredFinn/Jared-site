@@ -12,27 +12,32 @@
   <script src="https://kit.fontawesome.com/efe44b00f6.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-    <input type="hidden" name="form-name" value="contact">
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden [formGroup]="contactForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Name</label>
-      <input [(ngModel)]="name" type="text" class="form-control" id="name" name="name" required>
+      <input formControlName="name" type="text" class="form-control" id="name" name="name" required>
     </div>
     <div class="form-group">
       <label for="email">Email address</label>
-      <input [(ngModel)]="email" type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required>
+      <input formControlName="email" type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required>
     </div>
     <div class="form-group">
       <label for="phone">Phone</label>
-      <input [(ngModel)]="phone" type="tel" class="form-control" id="phone" name="phone" required>
+      <input formControlName="phone" type="tel" class="form-control" id="phone" name="phone" required>
     </div>
     <div class="form-group mt-3">
       <label for="proposal">Proposal <small class="instruction">(Please provide your preferred contact method)</small></label>
-      <textarea [(ngModel)]="proposal" class="form-control" id="proposal" name="proposal" rows="5" required></textarea>
+      <textarea formControlName="proposal" class="form-control" id="proposal" name="proposal" rows="5" required></textarea>
     </div>
-    <button *ngIf="!submitted" type="submit" class="submit-button mt-3 btn text-white">Submit</button>
-    <p class="text-center m-2" *ngIf="submitted">I will be in touch soon!</p>
+    <button type="submit" class="submit-button mt-3 btn text-white">Submit</button>
+    <p class="text-center m-2">I will be in touch soon!</p>
   </form>
+  
+  <!-- Add the hidden form here -->
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="contact">
+  </form>
+  
   <app-root></app-root>
 </body>
 </html>
