@@ -64,7 +64,7 @@
       <div class="col-md-8">
         <div class="jumbotron">
           <h1 class="display-4 text-center m-4">Get In Touch</h1>
-
+          <form name="action" method="POST" data-netlify="true" onSubmit="submit">
             <div class="form-group">
               <label for="name">Name</label>
               <input [(ngModel)]="name" type="text" class="form-control" id="name" name="name" required>
@@ -84,6 +84,7 @@
             </div>
             <button *ngIf="!submitted" type="submit" class="submit-button mt-3 btn text-white" (click)="sendEmail()">Submit</button>
             <p class="text-center m-2" *ngIf="submitted">I will be in touch soon!</p>
+          </form>
         </div>
       </div>
   </div>
