@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
-import { catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-form-service',
@@ -37,24 +35,15 @@ export class FormServiceComponent implements OnInit {
       fromObject: formData
     });
 
-    this.http
-    .post("/", params.toString(), {
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      responseType: "text",
-    })
-    .pipe(catchError(this.handleError));
-  }
-
-  private handleError(err: HttpErrorResponse) {
-    let errMsg = "";
-
-    if (err.error instanceof ErrorEvent) {
-      errMsg = `Client-side error: ${err.error.message}`;
-    } else {
-      errMsg = `Server-side error. Code: ${err.status}. Message: ${err.message}`;
-    }
-
-    return throwError(errMsg);
+    this.http.post('/', params.toString(), {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    }).subscribe(response => {
+      console.log('Post request response:', response);
+    }, error => {
+      console.error('Post request error:', error);
+    });
   }
 }
 
