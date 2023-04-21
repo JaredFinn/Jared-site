@@ -33,7 +33,8 @@ export class FormServiceComponent implements OnInit {
 
     const url = 'https://api.netlify.com/api/v1/forms/contact/submissions'; // replace with your Netlify form ID
     const headers = new HttpHeaders({
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Access-Control-Allow-Origin': 'https://jaredfinn.com'
     });
     const body = new HttpParams({ fromObject: formData }).toString();
 
