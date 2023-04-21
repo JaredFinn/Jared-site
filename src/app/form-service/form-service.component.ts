@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-form-service',
@@ -31,19 +31,16 @@ export class FormServiceComponent implements OnInit {
     // Add the form name to the formData object
     formData['form-name'] = 'contact-form';
 
-    const params = new HttpParams({
-      fromObject: formData
+    const url = 'https://api.netlify.com/api/v1/forms/contact/submissions'; // replace with your Netlify form ID
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded'
     });
+    const body = new HttpParams({ fromObject: formData }).toString();
 
-    this.http.post('/', params.toString(), {
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
-    }).subscribe(response => {
-      console.log('Post request response:', response);
-    }, error => {
-      console.error('Post request error:', error);
-    });
+    this.http.post(url, body, { headers }).subscribe(
+      response => console.log('Form submission successful:', response),
+      error => console.error('Form submission error:', error)
+    );
   }
 }
 
