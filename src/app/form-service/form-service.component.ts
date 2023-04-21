@@ -37,7 +37,7 @@ export class FormServiceComponent implements OnInit {
       fromObject: formData
     });
 
-    return this.http
+    this.http
     .post("/", params.toString(), {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       responseType: "text",
