@@ -31,9 +31,10 @@ export class FormServiceComponent implements OnInit {
     // Add the form name to the formData object
     formData['form-name'] = 'contact-form';
 
-    const url = 'jaredfinn.netlify.app'; // replace with your Netlify form ID
+    const url = '/.netlify/functions/submit'; // replace with your Netlify form ID
     const headers = new HttpHeaders({
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Access-Control-Allow-Origin': 'https://jaredfinn.com'
     });
     const body = new HttpParams({ fromObject: formData }).toString();
 
