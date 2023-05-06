@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 
@@ -21,7 +21,17 @@ export class FormServiceComponent implements OnInit {
       phone: ['', Validators.required],
       proposal: ['', Validators.required]
     });
+  
+    // Add name attributes to form controls for Netlify
+    const controls = this.contactForm.controls;
+    for (const key in controls) {
+      if (controls.hasOwnProperty(key)) {
+        controls[key].setErrors({ 'name': key });
+      }
+    }
   }
+
+  
 
   handleSubmit(event: Event): void {
     event.preventDefault();
