@@ -26,29 +26,29 @@ export class FormServiceComponent implements OnInit {
     });
   }
 
-  onSubmit(form: NgForm) {
-    const formData = new FormData();
+  // onSubmit(form: NgForm) {
+  //   const formData = new FormData();
 
-    for (const [key, value] of Object.entries(form.value)) {
-      formData.append(key, value as string);
-    }
+  //   for (const [key, value] of Object.entries(form.value)) {
+  //     formData.append(key, value as string);
+  //   }
 
-    this.http.post('/', formData, {
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      observe: 'response'
-    }).subscribe(response => {
-      if (response.status === 200) {
-        // Handle success response
-        console.log('Form submission successful');
-      } else {
-        // Handle error response
-        console.log('Form submission failed');
-      }
-    }, error => {
-      // Handle network error
-      console.error('Form submission failed:', error);
-    });
-  }
+  //   this.http.post('/', formData, {
+  //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  //     observe: 'response'
+  //   }).subscribe(response => {
+  //     if (response.status === 200) {
+  //       // Handle success response
+  //       console.log('Form submission successful');
+  //     } else {
+  //       // Handle error response
+  //       console.log('Form submission failed');
+  //     }
+  //   }, error => {
+  //     // Handle network error
+  //     console.error('Form submission failed:', error);
+  //   });
+  // }
 
 
   //   // Add the form name to the formData object
