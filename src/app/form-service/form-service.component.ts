@@ -36,9 +36,10 @@ export class FormServiceComponent implements OnInit {
 
     const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
 
-    this.http.post('/', new URLSearchParams(formData as any).toString(), { headers })
-      .subscribe(() => console.log('Message sent successfully!'),
-        (error) => console.error(error));
+    this.http.post('/', new URLSearchParams(formData as any).toString(), { headers, responseType: 'text' })
+   .subscribe(() => console.log('Message sent successfully!'),
+     (error) => console.error(error));
+
   }
 }
 
