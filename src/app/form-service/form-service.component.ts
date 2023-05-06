@@ -25,25 +25,46 @@ export class FormServiceComponent implements OnInit {
     });
   }
 
-  onSubmit() {
-    const formData = this.contactForm.value;
+  
+  onSubmit(form: HTMLFormElement) {
+    const formData = new FormData(form);
 
-    // Add the form name to the formData object
-    formData['form-name'] = 'contact-form';
-
-    const params = new HttpParams({
-      fromObject: formData
-    });
-
-    this.http.post('/', params.toString(), {
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
+    this.http.post('/', formData, {
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      observe: 'response'
     }).subscribe(response => {
-      console.log('Post request response:', response);
+      if (response.status === 200) {
+        // Handle success response
+        console.log('Form submission successful');
+      } else {
+        // Handle error response
+        console.log('Form submission failed');
+      }
     }, error => {
-      console.error('Post request error:', error);
+      // Handle network error
+      console.error('Form submission failed:', error);
     });
   }
+
+  // onSubmit() {
+  //   const formData = this.contactForm.value;
+
+  //   // Add the form name to the formData object
+  //   formData['form-name'] = 'contact-form';
+
+  //   const params = new HttpParams({
+  //     fromObject: formData
+  //   });
+
+  //   this.http.post('/', params.toString(), {
+  //     headers: {
+  //       'Content-Type': 'application/x-www-form-urlencoded'
+  //     }
+  //   }).subscribe(response => {
+  //     console.log('Post request response:', response);
+  //   }, error => {
+  //     console.error('Post request error:', error);
+  //   });
+  // }
 }
 
