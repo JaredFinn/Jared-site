@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { HttpClient, HttpParams } from '@angular/common/http';
 
 
@@ -26,8 +26,12 @@ export class FormServiceComponent implements OnInit {
     });
   }
 
-    onSubmit(form: HTMLFormElement) {
-    const formData = new FormData(form);
+  onSubmit(form: NgForm) {
+    const formData = new FormData();
+
+    for (const [key, value] of Object.entries(form.value)) {
+      formData.append(key, value as string);
+    }
 
     this.http.post('/', formData, {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -45,6 +49,7 @@ export class FormServiceComponent implements OnInit {
       console.error('Form submission failed:', error);
     });
   }
+
 
   //   // Add the form name to the formData object
   //   formData['form-name'] = 'contact-form';
