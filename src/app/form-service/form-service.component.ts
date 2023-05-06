@@ -39,7 +39,7 @@ export class FormServiceComponent implements OnInit {
 
     const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
 
-    this.http.post('/', body.toString(), { headers })
+    this.http.post('/contact', body.toString(), { headers })
       .subscribe(() => console.log('Message sent successfully!'),
         (error) => console.error(error));
   }
