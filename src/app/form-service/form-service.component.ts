@@ -12,12 +12,9 @@ export class FormServiceComponent implements OnInit {
 
   contactForm!: FormGroup;
 
-  constructor(
-    private fb: FormBuilder,
-    private http: HttpClient
-  ) { }
+  constructor(private fb: FormBuilder, private http: HttpClient) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -26,20 +23,20 @@ export class FormServiceComponent implements OnInit {
     });
   }
 
-  handleSubmit(event: any): void {
+  handleSubmit(event: Event): void {
     event.preventDefault();
 
-    const myForm = event.target;
-    const formData = new FormData(myForm);
+    const formData = new FormData();
+    formData.append('form-name', 'contact');
 
-    const body = new URLSearchParams();
-    formData.forEach((value, key) => {
-      body.set(key, value as string);
+    const formValue = this.contactForm.value;
+    Object.keys(formValue).forEach((key) => {
+      formData.append(key, formValue[key]);
     });
 
     const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
 
-    this.http.post('/', body.toString(), { headers })
+    this.http.post('/', new URLSearchParams(formData as any).toString(), { headers })
       .subscribe(() => console.log('Message sent successfully!'),
         (error) => console.error(error));
   }
