@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 
 @Component({
@@ -26,47 +26,23 @@ export class FormServiceComponent implements OnInit {
     });
   }
 
-  // onSubmit(form: NgForm) {
-  //   const formData = new FormData();
+  handleSubmit(event: any): void {
+    event.preventDefault();
 
-  //   for (const [key, value] of Object.entries(form.value)) {
-  //     formData.append(key, value as string);
-  //   }
+    const myForm = event.target;
+    const formData = new FormData(myForm);
 
-  //   this.http.post('/', formData, {
-  //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  //     observe: 'response'
-  //   }).subscribe(response => {
-  //     if (response.status === 200) {
-  //       // Handle success response
-  //       console.log('Form submission successful');
-  //     } else {
-  //       // Handle error response
-  //       console.log('Form submission failed');
-  //     }
-  //   }, error => {
-  //     // Handle network error
-  //     console.error('Form submission failed:', error);
-  //   });
-  // }
+    const body = new URLSearchParams();
+    formData.forEach((value, key) => {
+      body.set(key, value as string);
+    });
 
+    const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
 
-  //   // Add the form name to the formData object
-  //   formData['form-name'] = 'contact-form';
-
-  //   const params = new HttpParams({
-  //     fromObject: formData
-  //   });
-
-  //   this.http.post('/', params.toString(), {
-  //     headers: {
-  //       'Content-Type': 'application/x-www-form-urlencoded'
-  //     }
-  //   }).subscribe(response => {
-  //     console.log('Post request response:', response);
-  //   }, error => {
-  //     console.error('Post request error:', error);
-  //   });
-  // }
+    this.http.post('/', body.toString(), { headers })
+      .subscribe(() => console.log('Message sent successfully!'),
+        (error) => console.error(error));
+  }
 }
+
 
