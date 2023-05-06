@@ -17,9 +17,9 @@ export class FormServiceComponent implements OnInit {
   ngOnInit() {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      phone: ['', Validators.required],
-      proposal: ['', Validators.required]
+      // email: ['', [Validators.required, Validators.email]],
+      // phone: ['', Validators.required],
+      // proposal: ['', Validators.required]
     });
   
     // Add name attributes to form controls for Netlify
