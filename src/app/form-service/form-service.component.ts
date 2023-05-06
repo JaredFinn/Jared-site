@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpParams } from '@angular/common/http';
 
+
 @Component({
   selector: 'app-form-service',
   templateUrl: './form-service.component.html',
@@ -25,8 +26,7 @@ export class FormServiceComponent implements OnInit {
     });
   }
 
-  
-  onSubmit(form: HTMLFormElement) {
+    onSubmit(form: HTMLFormElement) {
     const formData = new FormData(form);
 
     this.http.post('/', formData, {
@@ -45,9 +45,6 @@ export class FormServiceComponent implements OnInit {
       console.error('Form submission failed:', error);
     });
   }
-
-  // onSubmit() {
-  //   const formData = this.contactForm.value;
 
   //   // Add the form name to the formData object
   //   formData['form-name'] = 'contact-form';
