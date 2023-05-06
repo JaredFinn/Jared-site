@@ -26,7 +26,25 @@ export class FormServiceComponent implements OnInit {
   }
 
   
+  onSubmit(form: HTMLFormElement) {
+    const formData = new FormData(form);
 
+    this.http.post('/', formData, {
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      observe: 'response'
+    }).subscribe(response => {
+      if (response.status === 200) {
+        // Handle success response
+        console.log('Form submission successful');
+      } else {
+        // Handle error response
+        console.log('Form submission failed');
+      }
+    }, error => {
+      // Handle network error
+      console.error('Form submission failed:', error);
+    });
+  }
 
   // onSubmit() {
   //   const formData = this.contactForm.value;
