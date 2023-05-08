@@ -22,7 +22,7 @@
   <button type="submit" class="submit-button mt-3 btn text-white">Submit</button>
 </form> -->
 
-<form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" [formGroup]="contactForm">
+<form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" (ngSubmit)="handleSubmit($event)" [formGroup]="contactForm">
   <input type="hidden" name="form-name" value="contact" />
   <div class="form-group">
     <label for="name">Name</label>
@@ -44,7 +44,7 @@
   <div style="display:none;">
     <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
   </div>
-  <button type="submit" class="submit-button mt-3 btn text-white" (click)="handleSubmit($event)">Submit</button>
+  <button type="submit" class="submit-button mt-3 btn text-white">Submit</button>
 </form>
 
 
