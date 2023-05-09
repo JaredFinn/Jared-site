@@ -60,3 +60,89 @@
 .instruction{
     color: #ffffff8c;
 }
+
+.introduction-section {
+    opacity: 0;
+    transform: translateY(200px);
+    transition: all 1s ease-in-out;
+  }
+  
+  .introduction-section.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media only screen and (max-width: 767px) {
+
+    .title-name{
+      text-align: center;
+    }
+
+    .title-description{
+      text-align: center;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+      }
+
+    /* Make the introduction section full width */
+    .introduction-section {
+      width: 100%;
+      padding: 50px 0;
+    }
+    
+    /* Center the portrait and reduce its size */
+    .portrait {
+      display: block;
+      margin: auto;
+      width: 200px;
+      height: 220px;
+    }
+    
+    /* Reduce the font size of the introduction text */
+    .container-fluid {
+      font-size: 16px;
+    }
+    
+    /* Center the "Let's Work Together!" button */
+    .work-button {
+      display: block;
+      margin: auto;
+      margin-top: 30px;
+    }
+    
+    /* Reduce the size of the hero images */
+    .hero-container img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    /* Reduce the font size and padding of the service blocks */
+    .service-block {
+        width: 100% !important;
+        margin-right: 0 !important;
+        margin-bottom: 30px !important;
+      }
+
+      /* Center the services section */
+  .services-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  /* Set width to 100% */
+  .services-container .container {
+    width: 100%;
+  }
+
+    
+    /* Reduce the size of the service block icons */
+    .highlight {
+      font-size: 24px;
+    }
+  }
+  
