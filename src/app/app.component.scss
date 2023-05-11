@@ -8,18 +8,75 @@
     font-family: 'Courier', sans-serif;
 }
 
-.hero-container{
-    background: linear-gradient(to bottom,  #ffffff, rgb(135, 154, 217));
+// .hero-container{
+//     background: linear-gradient(to bottom,  #ffffff, rgb(135, 154, 217));
+// }
+
+.heading{
+  height: 100vh;
+  background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(222, 227, 248));
 }
 
 .contact-form-container{
-    background: linear-gradient(to bottom, rgb(79, 90, 128), rgb(35, 40, 57));
+    background: linear-gradient(to bottom, rgb(169, 180, 217) , rgb(79, 90, 128));
     //background: linear-gradient(to bottom, rgb(79, 90, 128), #ffffff);
 }
 
+.contact {
+  opacity: 0;
+  transform: translateY(200px);
+  transition: all .5s ease-in-out;
+  height: 100%;
+  width: 100%;
+}
+
+.contact.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.services-title {
+  opacity: 0;
+  transform: translateY(200px);
+  transition: all .5s ease-in-out;
+  height: 100%;
+  width: 100%;
+}
+
+.services-title.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-rows {
+  opacity: 0;
+  transform: translateY(200px);
+  transition: all .5s ease-in-out;
+  height: 100%;
+  width: 100%;
+}
+
+.service-rows.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.introduction-section {
+  opacity: 0;
+  transform: translateY(200px);
+  transition: all .5s ease-in-out;
+  height: 100%;
+  width: 100%;
+}
+
+.introduction-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .services-container{
-    background: linear-gradient(to bottom, rgb(135, 154, 217), rgb(79, 90, 128));
-    padding: 50px;
+  background: linear-gradient(to bottom,  rgb(222, 227, 248), rgb(169, 180, 217));
+  padding: 15px;
 }
 
 .contact-form{
@@ -61,16 +118,7 @@
     color: #ffffff8c;
 }
 
-.introduction-section {
-    opacity: 0;
-    transform: translateY(200px);
-    transition: all 1s ease-in-out;
-  }
-  
-  .introduction-section.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
 
   @media only screen and (max-width: 767px) {
 
@@ -132,7 +180,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 150px !important;
+    padding-top: 100px !important;
   }
 
   /* Set width to 100% */

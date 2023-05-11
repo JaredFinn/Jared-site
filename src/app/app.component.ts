@@ -18,13 +18,17 @@ export class AppComponent {
   constructor() {}
 
   @ViewChild('introSection', {static: true}) introSection!: ElementRef;
+  @ViewChild('serviceTitle', {static: true}) serviceTitle!: ElementRef;
+  @ViewChild('serviceRows', {static: true}) serviceRows!: ElementRef;
+  @ViewChild('contact', {static: true}) contact!: ElementRef;
 
   ngOnInit() {
     const options = {
       root: null,
-      rootMargin: '0px',
-      threshold: 0.2
+      rootMargin: '10px',
+      threshold: .1
     };
+    window.scrollTo(0, 0);
 
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
@@ -35,7 +39,37 @@ export class AppComponent {
       });
     }, options);
 
+    const observer2 = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.serviceRows.nativeElement.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    const observer3 = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.serviceTitle.nativeElement.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    const observer4 = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.contact.nativeElement.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+
     observer.observe(this.introSection.nativeElement);
+    observer2.observe(this.serviceRows.nativeElement);
+    observer3.observe(this.serviceTitle.nativeElement);
+    observer4.observe(this.contact.nativeElement);
   }
 
   sendEmail() {

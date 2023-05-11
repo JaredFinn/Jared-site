@@ -4,77 +4,33 @@
 </nav> -->
 
 
-
-<div #introSection class="row introduction-section m-auto p-5 rounded-3">
-  <div class="col-md-4 m-auto">
-    <img class="portrait rounded-pill" src="/assets/Jared_Finn.jpg" alt="">
-  </div>
-  <div class="col-md-8 container-fluid py-5">
-    <h1 class="title-name">Hi I'm Jared Finn</h1>
-    <p class="title-description">Helping my friends, peers and communities around me create and innovate to make all of our lives less stressful and more enjoyable is a dream of mine. From simple day projects to year long endeavors, I am fully prepared to take on anything and provide 1 on 1 service.</p>
-    <button class="work-button btn" (click)="scroll(contact)">Lets Work Together!</button>
-  </div>
-</div>
-
-
-
-
-
-<div class="hero-container row me-0">
-  
-  <h1 class="text-center display-4 text-center mt-5">Get to know my skills.</h1>
-  <div id="myCarousel" class="carousel slide " data-bs-ride="carousel">
-    <!-- <div class="carousel-indicators">
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div> -->
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img width="100%" height="100%" src="/assets/mealist.png" alt="">
-        <div class="container">
-          <!-- <div class="carousel-caption text-start text-dark">
-            <h1>Example headline.</h1>
-            <p>Some representative placeholder content for the first slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-          </div> -->
-        </div>
-      </div>
-      <div class="carousel-item">
-       <img width="100%" height="100%" src="/assets/handyman.png" alt="">
-        <!-- <div class="container">
-          <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Some representative placeholder content for the second slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-          </div>
-        </div> -->
-      </div>
+<div class="heading">
+  <div #introSection class="row introduction-section m-auto rounded-3">
+    <div class="col-md-4 m-auto text-center">
+      <img class="portrait" height="250px" src="/assets/Jared_Cows.jpg" alt="">
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+    <div class="col-md-8 container-fluid py-5 m-auto">
+      <h1 class="title-name">Hi I'm Jared Finn</h1>
+      <p class="title-description">Helping my friends, peers and communities around me create and innovate to make all of our lives less stressful and more enjoyable is a dream of mine. From simple day projects to year long endeavors, I am fully prepared to take on any project to boost your business. I am excited to continue to provide professional service at affordable costs.</p>
+      <button class="work-button btn" (click)="scroll(contact)">Lets Work Together!</button>
+    </div>
   </div>
 </div>
+
 
 <section id="services" class="services-container current text-white">
-  <!-- <h1 class="text-center display-4 mt-5">What Can I Do?</h1> -->
-    <div class="services-top">
-        <div class="container bootstrap snippets bootdey">
-            <div class="row w-100">
+    <div #serviceTitle class="services-title">
+      <h1 class="text-center display-4 mb-5 text-black">What Can I Do?</h1>
+    </div>
+            <div #serviceRows class="service-rows col w-100">
               <div class="row mb-5">
                     <div class="service-block w-50" style="visibility: visible;">
                         <div class="w-100 text-center">
                           <div class="ico fa fa-magic highlight text-black"></div>
                         </div>
                         <div class="text-block text-center">
-                            <div class="name mb-2">Web Development</div>
-                            <div class="text w-75 m-auto">Create and design layout and visual looks of websites/apps/systems to make a pleasing UI for the user. </div>
+                            <div class="name mb-2 text-black">Web Development</div>
+                            <div class="text w-75 m-auto text-black">Create and design layout and visual looks of websites/apps/systems to make a pleasing UI for the user. </div>
                         </div>
                     </div>
                     
@@ -83,8 +39,8 @@
                         <div class="ico fa fa-code highlight text-black"></div>
                       </div>
                       <div class="text-block text-center">
-                          <div class="name mb-2">Full-Stack Development</div>
-                          <div class="text w-75 m-auto">Able to design and devlop full stack systems/applications to accomodate your needs and wants. Design and feel, stored data in a database, and so much more.</div>
+                          <div class="name mb-2 text-black">Full-Stack Development</div>
+                          <div class="text w-75 m-auto text-black">Able to design and devlop full stack systems/applications to accomodate your needs and wants. Design and feel, stored data in a database, and so much more.</div>
                       </div>
                     </div>
               </div>
@@ -94,8 +50,8 @@
                           <div class="ico fa fa-umbrella highlight text-black"></div>
                         </div>
                         <div class="text-block text-center">
-                            <div class="name mb-2">Mobile App Development</div>
-                            <div class="text w-75 m-auto">Use of full stack development to design and create apps for IOS and Android. Nothing better than bringing those spur of the moment app ideas to life. </div>
+                            <div class="name mb-2  text-black">Mobile App Development</div>
+                            <div class="text w-75 m-auto text-black">Use of full stack development to design and create apps for IOS and Android. Nothing better than bringing those spur of the moment app ideas to life. </div>
                         </div>
                       </div>
                       <div class="service-block w-50" style="visibility: visible;">
@@ -103,23 +59,20 @@
                           <div class="ico fa fa-umbrella highlight text-black"></div>
                         </div>
                         <div class="text-block text-center">
-                            <div class="name mb-2">Scripting & Automation</div>
-                            <div class="text w-75 m-auto">Taking everyday, menial tasks and simplifying the process and automating as much of the process as possible limiting human involvement. </div>
+                            <div class="name mb-2  text-black">Scripting & Automation</div>
+                            <div class="text w-75 m-auto text-black">Taking everyday, menial tasks and simplifying the process and automating as much of the process as possible limiting human involvement. </div>
                         </div>
                       </div>
               </div>
             </div>
-
-        </div>
-    </div>
 </section>
 
 
-<div class="contact-form-container p-5 text-white" #contact>
-  <div class="row justify-content-center">
+<div class="contact-form-container p-5 text-white pt-5" >
+  <div #contact class="contact row justify-content-center">
     <div class="col-md-8">
       <div class="jumbotron">
-        <h1 class="display-4 text-center m-4">Get In Touch</h1>
+        <h1 class="display-4 text-center m-4 text-black">Get In Touch</h1>
         <app-form-service></app-form-service>
       </div>
     </div>
