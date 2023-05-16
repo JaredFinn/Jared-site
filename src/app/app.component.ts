@@ -27,21 +27,7 @@ export class AppComponent {
   n = 0;
   up = true;
 
-  boxes = [
-    {
-      imageUrl: '../assets/Jared_Cows.jpg',
-      buttonText: 'Button 1'
-    },
-    {
-      imageUrl: 'path/to/image2.jpg',
-      buttonText: 'Button 2'
-    },
-    {
-      imageUrl: 'path/to/image3.jpg',
-      buttonText: 'Button 3'
-    },
-    // add more boxes here
-  ];
+
 
   constructor() {
     setInterval(() => {

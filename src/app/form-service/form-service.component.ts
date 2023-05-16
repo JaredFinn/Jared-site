@@ -12,6 +12,8 @@ export class FormServiceComponent implements OnInit {
 
   contactForm!: FormGroup;
 
+  submitted: boolean = false;
+
   constructor(private fb: FormBuilder, private http: HttpClient) { }
 
   ngOnInit() {
