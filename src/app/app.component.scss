@@ -15,7 +15,7 @@
 
 .box {
   position: relative;
-  height: 250px;
+  height: auto;
   background-size: cover;
   background-position: center;
 }
@@ -243,6 +243,10 @@ body{
   width: 100%;
 }
 
+@media only screen and (max-width: 1024px) {
+
+}
+
 
   @media only screen and (max-width: 767px) {
 
@@ -250,18 +254,27 @@ body{
       margin-top: 50px;
     }
 
+    .services-comment{
+      margin-top: 110px;
+    }
+
     .services-title{
       margin-bottom: 50px;
     }
 
     .box{
-      padding: 50px;
+      padding: 16px;
       height: auto;
       width: 75%;
     }
 
     .title-name{
       text-align: center;
+      font-size: 30px;
+    }
+
+    .myname{
+      font-size: 34px;
     }
 
     .title-description{
@@ -309,7 +322,7 @@ body{
     .service-block {
         width: 100% !important;
         margin-right: 0 !important;
-        margin-bottom: 30px !important;
+        margin-bottom: 75px !important;
       }
 
       /* Center the services section */
@@ -318,7 +331,6 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 100px !important;
   }
 
   /* Set width to 100% */
@@ -330,6 +342,14 @@ body{
     /* Reduce the size of the service block icons */
     .highlight {
       font-size: 24px;
+    }
+
+    .divider{
+      padding: 32px;
+    }
+
+    .service-row{
+      margin-bottom: 0;
     }
   }
   
