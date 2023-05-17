@@ -44,7 +44,7 @@
   <div style="display:none;">
     <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
   </div>
-  <button type="submit" class="submit-button mt-3 btn text-white" (click)="submitted = !submitted" *ngIf="!submitted">Submit</button>
+  <button type="submit" class="submit-button mt-3 btn text-white" *ngIf="!submitted">Submit</button>
   <p class="submitted-text" *ngIf="submitted">Thank you, I look forward to working with you!</p>
 </form>
 

@@ -38,6 +38,8 @@ export class FormServiceComponent implements OnInit {
   handleSubmit(event: Event): void {
     event.preventDefault();
 
+    this.submitted = !this.submitted;
+
     const formData = new FormData();
     formData.append('form-name', 'contact');
 
